@@ -544,6 +544,7 @@ pub fn early_resolve_expr(ex: @ast::expr,
       ast::expr_binary(*) |
       ast::expr_unary(*) | ast::expr_assign_op(*) |
       ast::expr_index(*) | ast::expr_method_call(*) => {
+        debug!("method_map for id %? = %?", ex.id, fcx.inh.method_map.find(&ex.id));
         match ty::method_call_bounds(cx.tcx, fcx.inh.method_map, ex.id) {
           Some(bounds) => {
             if has_trait_bounds(/*bad*/copy *bounds) {

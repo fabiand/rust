@@ -1582,7 +1582,7 @@ pub fn new_fn_ctxt_w_id(ccx: @CrateContext,
 
     debug!("new_fn_ctxt_w_id(path=%s, id=%?, impl_id=%?, \
             param_substs=%s",
-           path_str(ccx.sess, &path),
+           path_str(ccx.sess, path),
            id,
            impl_id,
            opt_param_substs_to_str(ccx.tcx, &param_substs));
